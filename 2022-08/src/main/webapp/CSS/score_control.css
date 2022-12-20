@@ -1,0 +1,67 @@
+@charset "UTF-8";
+body{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+main{
+	width:1200px;
+	min-height:400px;
+	margin:30px auto;
+	border: 4px outset #aaa;
+	padding:20px;
+	border-radius:15px;
+	box-shadow:3px 3px 5px #999;
+	overflow:auto;
+}
+main>.main_title{
+	font-size:25pt;
+	font-weight:bolder;
+	text-align:center;
+	margin-bottom:20px;
+}
+main>form{
+	width:280px;
+	float:left;
+	background-color:#ccc;
+	border-radius:10px;
+	padding:20px;
+}
+form>span{
+	display:inline-block;
+	width:35px;
+}
+form>input[name=id]{
+	width:100px;
+}
+form>input[name=subject]{
+	width:100px;
+}
+form>input[name=score]{
+	width:100px;
+}
+#list>#title{
+	background-color:#444;
+	color:#fff;
+	padding:2px 30px;
+	border-radius:5px;
+}
+#list{
+	margin:0 100px 0 350px;
+	
+}
+#list span{
+	display:inline-block;
+}
+#list span.id{ width:120px; }
+#list span.subject{ width:150px; }
+#list span.socre{ width:100px; }
+
+#items>div:last-child{
+	border-bottom:2px dotted #aaa;
+}
+
+#items>.item:hover{
+	background-color:#ddd;
+	cursor:pointer;
+}

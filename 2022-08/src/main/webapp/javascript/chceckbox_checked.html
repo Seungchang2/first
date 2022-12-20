@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox_checked</title>
+</head>
+<body>
+<form name='frm' method='post'>
+	<table border='1'>
+		<th>가장 마음에 드는 색을 고르시오</th>
+		<tr>
+			<td>
+				<textarea name='re' rows="20" cols="100"></textarea>
+				</td></tr>
+				<tr>
+				<td>
+					<label><input type='checkbox' value='빨강' name ='color'>빨강</label>
+					<label><input type='checkbox' value='노랑' name ='color'>노랑</label>
+					<label><input type='checkbox' value='파랑' name ='color'>파랑</label><br>
+					<label><input type='checkbox' value='보라' name ='color'>보라</label>
+					<label><input type='checkbox' value='주황' name ='color'>주황</label>
+					<label><input type='checkbox' value='검정' name ='color'>검정</label><br>
+					<input type='button' value='선택' name='btn' onclick="mclick(this.form)">
+					<input type='reset' value='취소'/>
+			</td>
+		</tr>
+	</table>
+</form>s
+<script>
+let str='';
+let chks=[]; //storage에 저장될 값이나 저장한 값을 저장하는 배열 변수
+
+//sessionStorage에 있는 값을 사용하여 현재 페이지의 초기값으로 설정
+let temp = sessionStorage.getItem('chks');
+let frm = document.frm;
+if(temp!=null){
+	chks=temp.split(',');
+	for(v of chks){
+		for(tag of frm.color){
+			if(tag.value == v){
+				tag.checked=true;
+				str += tag.value +'=\n';
+				break;
+			}
+		}
+	}
+		frm.re.value = str;
+}
+
+function mclick(frm){
+	str='';
+	chks=[];
+	for(tag of frm.color){
+	if(tag.checked){
+		str += tag.value='\n';
+		chks.push(tag.value);
+		}
+	}
+	frm.re.value= frm.re.value;
+	sessionStorage.setItem('chks',chks);
+}
+</script>
+</body>
+</html>

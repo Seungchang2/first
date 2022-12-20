@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>object_literal2.html</title>
+</head>
+<body>
+<!-- 아래의 내용으로 MyMath 리터럴을 작성하시오
+1) max(x,y) 큰값 리턴
+2) min(x,y) 작은값 리턴
+3) sum(x,y) x~y까지의 합계를 계산하여 리턴
+4) even(x) x가 짝수면 true, 홀수면 false 리턴
+5) swap(x,y) x,y 값을 교환 -->
+<script>
+let MyMath ={};
+MyMath.x = 10;
+MyMath.y = 12;
+
+MyMath.max = function(){
+ 	if(this.x-this.y > 0){
+ 		return this.x
+ 	}else {
+ 		return this.y
+ 	}	
+}
+
+MyMath.min = function(){
+	if(this.x - this.y >0){
+		return this.y
+	}else{
+		return this.x
+	}
+}
+
+MyMath.sum = function(){
+	let s=0;
+	for(let i=this.x; i<=this.y; i++) s+=i;
+	return s;
+}
+
+MyMath.even = function(){
+	if(this.x%2 == 0){
+		return true
+	}else {
+		return false
+	}
+}
+
+MyMath.swap = function(){
+	this.r = this.y;
+	this.y = this.x;
+	this.x = this.r;
+	console.log(this.x,this.y);
+}
+console.log(MyMath.max());
+console.log(MyMath.min());
+console.log(MyMath.sum());
+console.log(MyMath.even());
+MyMath.swap();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>num_mission.html</title>
+<style>
+p{	
+	width:800px;
+	background-color:#444;
+	color:#fff;
+	padding:10px;
+	box-sizing:border-box;
+	border-radius:10px;
+}
+span{
+	background-color :#bcc;
+	border:2px solid black;
+	display:inline-block;
+	width:60px;
+	text-align:center;
+}
+output{
+	margin-top:5px;
+	display:inline-block;
+	width:200px;
+	height:20px;
+	background-color:#ccc;
+	text-align:right;
+	
+}
+</style>
+</head>
+<body>
+<p>
+수량, 단가를 입력받아 금액, 부가세 10%를 계산하여 합계를 출력하시오.
+단, 소숫점 이하는 절삭처리.(toFixed 또는 parseInt) 
+	<li>총액은 부가세 10%가 포함된 금액으로 수정</li>
+</p>
+<form name='frm'>
+	<span>수량</span>
+	<input type='text' name='ea' value='1000'/><br/>
+	
+	<span>단가</span>
+	<input type='text' name='price' value='1255'/><br/><br/>
+	
+	<span>금액</span>
+	<output name='amt'></output><br/>
+	
+	<span>부가세</span>
+	<output name='tax'></output><br/>
+	
+	<span>총액</span>
+	<output name='total'></output><br/></br>
+	
+	<input type='button' value='계산' name='btn'/>
+</form>
+<script>
+let frm = document.frm;
+frm.btn.onclick = function(){
+	let ea = Number(frm.ea.value);
+	let price = Number(frm.price.value);
+	let amt = frm.amt;
+	let tax = frm.tax;
+	let total = frm.total;
+	
+	let v = ea*price;
+	let v1 = (ea*price)-(ea*price)/10;
+	//let t = parseInt(v/10);
+	let t = Number((v/10).toFixed(0));
+	amt.value = v1.toLocaleString();
+	tax.value = t.toLocaleString();
+	total.value = (v1+t).toLocaleString();
+}
+/*function test(){
+	let amt = 12355.6789;
+	console.log( parseInt(amt)); //소수점 이하가 절삭
+	console.log( parseInt(amt+0.5)); //반올림
+	console.log( parseInt((amt/10+0.5)*10));//12350
+	console.log( parseInt((amt/100+0.5))*100);//12300
+	
+	console.log('-------------');
+	console.log(amt.toFixed(0));
+	console.log(amt.toFixed(1));
+}
+test();
+	*/
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scope.html</title>
+</head>
+<body>
+<script>
+//전역형
+
+function a(){
+	var name='hong';
+	var age =19;
+	console.log('name:',name);
+	console.log('age:',age);
+	name1='홍길동';
+	age1=30;
+}
+
+a();//함수를 호출하는 부분.
+console.log('name:',name1);
+console.log('age:',age1);
+</script>
+
+<script>
+//지역형
+
+function b(){
+	var name2='hong';
+	var age2 =19;
+	console.log('name:',name2);
+	console.log('age:',age2);
+	name2='홍길동';
+	age2=30;
+}
+
+b();//함수를 호출하는 부분.
+//console.log('name2:',name2);
+//console.log('age2:',age2);
+</script>
+<script>
+//var와 let의차이
+var name='hong';
+var name='kim';
+
+//let은 한번만 선언 가능.
+let age=10;
+let age=20; //오류
+
+
+</script>
+</body>
+</html>

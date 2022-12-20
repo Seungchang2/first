@@ -1,0 +1,36 @@
+@charset "UTF-8";
+main{
+	width:700px;
+	margin:20px;
+	}
+div.title{
+	border-top:3px dotted #972222;
+	border-bottom:3px dotted #972222;
+}
+span{
+	display:inline-block;
+	text-align:center;
+}
+.title>span{
+	font-weight:bolder;
+	font-size:20px;
+}
+.name{
+	width:100px;
+}
+.id{
+	width:100px;
+}
+.phone{
+	width:200px;
+}
+.email{
+	width:200px;
+}
+.item{
+	border-bottom: solid 1px #ffffff;
+}
+#list{
+	border-bottom:3px solid #972222;
+	padding:3px;
+}

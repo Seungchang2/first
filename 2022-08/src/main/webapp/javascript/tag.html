@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tag.html</title>
+</head>
+<body>
+<div id='dom'>
+	<h1>태그 추가하기</h1>
+		<div id='here'>
+			<input type='button'>그냥 버튼</button>
+		</div>
+</div>
+<script>
+let input = document.createElement("input");
+input.setAttribute("type",'button');
+input.setAttribute('name','btn');
+input.setAttribute('value','버튼');
+here.prepend(input);
+
+let input2 = document.createElement('input');
+input2.setAttribute('type','text');
+input2.setAttribute('name','text');
+input2.setAttribute('value','뒤에');
+here.append(input2);
+
+let input3 = document.createElement('input');
+input3.setAttribute('type','date');
+input3.setAttribute('name','date');
+here.after(input3);
+
+let input4 = document.createElement('input');
+input4.setAttribute('type','button');
+input4.setAttribute('name','last');
+input4.setAttribute('value','버튼2');
+here.before(input4);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test2</title>
+</head>
+<body>
+<!-- 두 정수 사이의 숫자중 3 또는 5의 배수가 아닌 수를 while문을 사용하여 console에 출력하는 코드-->
+<form name='frm'>
+	<span></span>
+	<input type='text' name='x' value='1'/><br/>
+	<span></span>
+	<input type='text' name='y' value='100'/><br/>
+	<input type='button' value='실행' name='btn'/>
+</form>
+<script>
+//for문을 활용한 방법
+let frm = document.frm;
+frm.btn.addEventListener('click',function(){
+	let x =Number(frm.x.value);
+	let y= Number(frm.y.value);
+	for(n=x; n<=y ; n++){
+		if(n%3 !=0 && n%5 != 0){
+			console.log(n);
+		}
+	}
+})
+
+</script>
+<script>
+//while문을 활용한 방법
+/* let frm = document.frm;
+frm.btn.addEventListener('click',function(){
+	let x =Number(frm.x.value);
+	let y= Number(frm.y.value);
+	let n =x;
+	while(n<=y){
+		if(n%3 !=0 && n%5 != 0){
+			console.log(n);
+		}
+		n++
+	}
+})
+ */
+</script>
+</body>
+</html>

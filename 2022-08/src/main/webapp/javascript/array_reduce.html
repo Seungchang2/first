@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array_reduce.html</title>
+</head>
+<body>
+<script>
+const array=[];
+let reduce = array.reduce(function(cur, now){
+	cur[now] = ++cur[now] || 1;
+	return cur;
+}, {})
+
+console.log(reduce);
+</script>
+</body>
+</html>

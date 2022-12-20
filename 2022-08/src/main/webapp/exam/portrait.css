@@ -1,0 +1,28 @@
+/* 세로모드 */
+
+@charset "UTF-8";
+
+body{
+	background-color: #dfd;
+	margin:0;
+	padding:0;
+	
+}
+#main.a{
+	background-color: #faa;
+	height:150px;
+	
+	
+}
+#main.b{
+	background-color: #aaf;
+	height:250px;
+	
+	
+}
+#main.c{
+	background-color: #afa;
+	height:100px;
+	
+	
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for1.html</title>
+</head>
+<body>
+구구단을 input로 입력받아 output 영역에 해당 구구단을 출력하시오.
+<form id='frm'>
+	<br/>
+	<span>구구단 계산기</span>
+	<input type='text' name='gugu' value='5'/>
+	<br/>
+	<input type='button' name ='btn' value='출력'/>
+	<br/>
+	<output name='result'>결과</output>
+	<br/>
+</form>
+<script>
+// 10 9 8 7 6 ... 1
+/*
+for(var i= 10; i>=1 ; i--){
+	document.writeln(i);
+}
+*/
+let frm = getElementById(frm);
+let btn = frm.btn;
+let gugu = frm.gugu.value;
+let result = frm.result;
+btn.onclick = function(){
+	total ='';
+	for (var i= gugu; i<=10 ; i++ ){
+		total=(gugu+'*'+i+'='+(gugu*i));
+		result.innerHTML(total);
+		document.write('<br/>');
+	}
+}
+</script>
+</body>
+</html>

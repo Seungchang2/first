@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+ var arr = [44,55,66,77,88,99,88,77,88,99,44,55,77,88,77,99,88,66];
+ var gap = 20;
+ var canvas = document.querySelector("canvas");
+ var ctx;
+ init();
+ function init() {
+  canvas.width = 400;
+  canvas.height = 300;
+  ctx = canvas.getContext("2d");
+  var max = arr.reduce((value, item) => {
+  return value < item ? item : value;
+  }, arr[0].value);
+  //max  300 4/5,     :300*(4/5)/(max) * h maxh:240 = othersh: ? ? = 240 
+  var scaleHeight = 300 * 4 / 5 / max;
+  //          -      
+  var width = (400 - (gap * (arr.length + 1))) / arr.length;
+  createChart(width, scaleHeight);
+ }
+
+ function createChart(w, hs) {
+  ctx.fillStyle = "rgba(0,0,0,0.7)";
+  ctx.fillRect(0, 0, 400, 300);
+  var x = 0;
+  for (var i = 0; i < arr.length; i++) {
+  x += gap;
+  ctx.fillStyle = "orange";
+  var h = hs * arr[i];
+  ctx.fillRect(x, 300 - h, w, h);
+  x += w;
+  }
+ }
+</script>
+</body>
+</html>

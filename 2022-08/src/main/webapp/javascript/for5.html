@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for5.html</title>
+<style>
+.zone{
+	border:5px dotted #1fc;
+	border-radius :10px;
+	padding:10px;
+	display:inline-block;
+	width:50px;
+	margin-right:10px;
+	}
+
+</style>
+</head>
+<body>
+<h2>X~Y까지 구구단 출력</h2>
+	<span>단x</span>
+	<input type='text' id='x' value='2' size='2'/>
+	<br/>
+	<span>단y</span>
+	<input type='text' id='y' value='7' size='2'/>
+	<input type='button' id='btn' value='실행'/>
+	<hr/>
+	<output id='result'></output>
+<script>
+let btn = document.querySelector('#btn');
+let result = document.querySelector('#result');
+btn.onclick = function(){
+	let str = '';
+	let x = Number(document.querySelector('#x').value);
+	let y = Number(document.querySelector('#y').value);
+	for(let dan = x; dan<=y ; dan++){
+	str +="<div class = 'zone'>"
+		+ 	dan + "단<br/>";
+	for(var i=1; i<=9; i++){
+		str += dan+"*"+i+"="+(dan*1)+"<br/>";
+	}
+		
+	str += "</div>";
+	}
+	result.innerHTML = str;
+};
+
+
+</script>
+</body>
+</html>

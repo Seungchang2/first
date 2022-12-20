@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let now = new Date();
+let sec = now.getSeconds();
+if(sec < 10){
+	sec='0'+sec;
+}
+
+let min = now.getMinutes();
+if(min < 10){
+	min='0'+min;
+}
+
+let hou = now.getHours();
+if(hou < 10){
+	hou='0'+hou;
+}
+
+let timeStr= hou+':'+min+':'+sec;
+console.log(timeStr);
+</script>
+
+</body>
+</html>

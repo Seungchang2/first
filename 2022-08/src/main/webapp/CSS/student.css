@@ -1,0 +1,20 @@
+@charset "UTF-8";
+tr#one{
+	background-color:black;
+	color:white;
+}
+input#two{
+	position:fixed;
+	left:380px;
+}
+div#div{
+	position:fixed;
+	left:540px;
+	top:35px;	
+	
+}
+div#twoup{
+	border: solid silver;
+	width:800px;
+	
+}

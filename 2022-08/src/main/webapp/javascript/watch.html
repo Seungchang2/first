@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>watch.html</title>
+</head>
+<style>
+main{
+	width:600px;
+	padding:20px;
+	margin:200px auto;
+	border:solid 5px #fffaaa;
+	box-sizing:border-box;
+}
+#nal{
+	width:300px;
+	height:50px;
+	margin:20px;
+	border:3px solid #dddccc;
+	font-size:40px;
+}
+#time{
+	width:500px;
+	height:130px;
+	border:solid 3px #999fff;
+	font-size:100px;
+	padding : 5px;
+	text-align:center;
+}
+</style>
+<body>
+<main id='watch'>
+	<div id='nal'></div>
+	<div id='time'></div>
+</main>
+<script>
+let week = ['일','월','화','수','목','금','토'];
+let nal = document.querySelector('#nal');
+let time = document.querySelector('#time');
+setInterval(createDate, 1000);
+
+function createDate(){
+	let now = new Date();
+	let nalStr = now.toISOString().substr(0,10);
+	nalStr += "(" + week[now.getDay()]+")";
+	nal.innerHTML = nalStr;
+
+	let sec = now.getSeconds();
+	if(sec < 10){
+		sec='0'+sec;
+	}
+
+	let min = now.getMinutes();
+	if(min < 10){
+		min='0'+min;
+	}
+
+	let hou = now.getHours();
+	if(hou < 10){
+		hou='0'+hou;
+	}
+
+	let timeStr= hou+':'+min+':'+sec;
+				
+	time.innerHTML = timeStr;
+}
+</script>
+</body>
+</html>

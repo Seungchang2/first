@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forin.html</title>
+</head>
+<body>
+<input type='button' value='view' onclick='abc()'/>
+<input type='button' value='EXAM' onclick='exam()'/>
+<div id='result'></div>
+<script>
+function exam(){
+	let obj=[1,2,3,4,5,6,7,8,9,10];
+	//배열 obj에 값중 짝수만 result에 출력 하시오
+	for(var x in obj){
+		if(obj[x]%2==0){
+		console.log(obj[x]);
+	}
+}
+}
+function abc(){
+	let obj=['사일러스','이즈리얼','케넨','마오카이'];
+	let str='';
+	for(var x in obj){
+		console.log(obj[x])
+		str += obj[x]+' ';
+	}
+	//alert(obj[0]);
+	console.log(str);
+}
+
+
+</script>
+</body>
+</html>

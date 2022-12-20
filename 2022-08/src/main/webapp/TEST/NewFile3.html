@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test4</title>
+<link rel='stylesheet' href='../CSS/a_type.css'
+	  media='screen and (min-width:600px) and (max-width:800)'>
+
+<link rel='stylesheet' href='../CSS/b_type.css'
+	  media='screen and (min-width:801px)'>
+
+<link rel='stylesheet' href='../CSS/c_type.css'
+	  media='screen and (min-width:1000px)'>
+</head>
+<body>
+<div id = 'result'></div>
+
+<script>
+let img = '<img src="../images/a.png"/>';
+let r = document.querySeletor('#result');
+for(i=0; i<50; i++){
+	r.innerHTML += img;
+}
+</script>
+</body>
+</html>

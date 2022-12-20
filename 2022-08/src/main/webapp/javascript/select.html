@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select.html</title>
+</head>
+<body>
+<form name='frm'>
+	<input type='text' name='tt'/>
+	<select name='sel' onchange='chang(this.form)'>
+		<option value='#000'>검정</option>
+		<option value='#f00'>빨강</option>
+		<option value='#0f0'>녹색</option>
+		<option value='#00f'>파랑</option>
+		<option value='#ff0'>노랑</option>
+		<option value='#fff'>하양</option>
+	</select>
+	<input type='button' value='선택' onclick='mclick(this.form, this.value)'>
+</form>
+<script>
+// sessionStorage에 있는 값을 가져와 초기 설정.
+let bg;
+bg = sessionStorage.getItem('bg');
+if(bg !=null){
+	let ff = document.frm;
+	for(tag of ff.sel){
+		if(tag.value == bg){
+			ff.sel.value = bg;
+			ff.tt.style.backgroundColor = bg;
+		}
+	}
+}
+
+function mclick(ff, v){
+	ff.tt.style.backgrondColor = v;
+	save('#fff')
+}
+function chang(ff){
+	let color = ff.sel.options[ff.sel.selectedIndex].value;
+	ff.tt.style.backgroundColor = color;
+	save(color);
+}
+
+function save(bg){
+	sessionStorage.setItem('bg',bg);
+	
+}
+</script>
+
+
+</body>
+</html>

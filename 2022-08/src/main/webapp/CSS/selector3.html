@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>selector3.html</title>
+<style>
+/* div의 wtdth, height를 각각 120px 지정*/
+div {
+	width: 102px;
+	height: 120px;
+	border: 1px solid #aaa;
+}
+
+div:hover {
+	background-color: #ccc;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+span.b::before {
+	color: #f00;
+	content: 'hi....'
+}
+
+span.a::after {
+	color: #00f;
+	content: '..sale 상품'
+}
+</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<a href='#'>aaaaaa</a>
+	<a href='#'>bbbbbb</a>
+	<a href='#'>cccccc</a>
+	<br />
+	<span class='b'>before</span>
+	<br />
+	<span class='a'>after</span>
+</body>
+</html>

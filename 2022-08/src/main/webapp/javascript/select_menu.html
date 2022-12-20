@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select_menu</title>
+<style>
+select{
+	width:80px;
+	
+}
+main{	width:600px;
+		padding:0;
+		margin:0;
+		box-sizing:border-box;
+		border:3px solid #ffcccc;
+		border-radius:10px;
+}
+h3{
+	font-size:26pt;
+	text-align:center;
+}
+form>span{
+	margin:10px;
+	
+}
+.report{
+	margin-left:200px;
+	width:300px;
+	height:400px;
+	border:3px solid white;
+}
+.item{
+		font-size:15pt;
+}
+</style>
+</head>
+
+<body>
+<main>
+	<form name='frm'>
+		<h3>예약 시스템</h3>
+		<span class='item'>지역
+			<select name='city' size='6'></select></span>
+		<span class='item'>메뉴
+			<select name='menu' size='6'></select></span>
+		<div>
+			<span class='item'>인원수</span><br/>
+			<input type='text'  name='ea' size='5'/><br/>
+			<span>날짜</span>><br/>
+			<input type='date' name='nal'/><br/>
+			<span>시간</span>><br/>
+			<input type='time' name='sigan'/><br/>
+			<input type='button' name='btn' value='확인'/>
+		</div>
+		<div class='report'>
+		예약확인서
+		</div>
+	</form>
+</main>
+<script>
+let frm = document.frm;
+let now = new Date();
+let data ={
+		'서울' : [1,2,3,4,5],
+		'부산' : [3,4,5],
+		'인천' : [1,2,3,4],
+		'대구' : [6,7,8,9],
+		'제주' : [5,6,7,8,9,10]
+}
+//날짜와 시간을 설정
+frm.nal.valueAsDate = now;
+frm.sigan.value= now.getHours() +':'+ now.getMinutes();
+//지역설정
+let keys = Object.keys(data);//{}형태의 자료에서 key만 가져옴
+//1) html을 사용하여 태그를 만들어서 추가
+let html;
+for(k of keys){
+	html += `<option vlaue= "${k}">${k}<option>`;
+}
+frm.city.innerHTML = html;
+
+//2) option 객체를 생성하여 추가
+frm.city.length=0; // select box 초기화
+for(k of keys){
+	let op = new Option(k, k);
+	frm.city.options.add(op);
+}
+
+//메뉴설정------------------------------------------
+frm.city.onchange=function(){
+	let k = frm.city.value; 
+	let menu = data[k]
+	console.log(frm.city.value);
+	console.log(menu);
+	// 해당 지역의 메뉴를 menu에 추가
+	frm.menu.length = 0;
+	for(m of menu){
+		let op = new Option(m,m);
+		frm.menu.options.add(op);
+	}
+}
+
+frm.btn.addEventListener('click',function(ev){
+	//TODO
+	let html='';
+	let report = document.querySelector('.report');
+	html = `
+		<h2>예약 확인서</h2>
+		<span class='item'>지역:</span>${frm.city.value} <br/>
+		<span class='item'>메뉴:</span>${frm.menu.value} <br/>
+		<span class='item'>인원수:</span>${frm.ea.value} <br/>
+		<span class='item'>주문일:</span>${frm.nal.value} <br/>
+		<span class='item'>주문시간:</span>${frm.sigan.value} <br/>
+		`
+		report.innerHTML = html;
+})
+
+</script>
+</body>
+</html>

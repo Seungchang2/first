@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>reg_exp</title>
+</head>
+<body>
+<script>
+function msg(reg, str){
+	var b = reg.test(str);
+	var temp =`<li><b>${reg}</b> : ${str} <font color = 'red'>${b} </font>`;
+	document.write(temp);
+}
+
+	var str = ['123','123abc123','abc','!@#a','가나다','abc123가나다','Afsfaf','asdFAadff']
+try{
+	
+	var reg;
+	
+	//숫자가 포함되어 있는가
+	reg = /[0-9]/;
+	for(v of str){
+	msg(reg, v);
+	document.write('<hr/>');	
+	}
+	
+	//숫자만 입력되어 있는가
+	reg = /^[0-9]+$/;
+	
+	for(v of str){
+	msg(reg, v);	
+	}
+}catch(error){
+	alert(error);
+}
+</script>
+</body>
+</html>

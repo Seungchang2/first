@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+</div>
+<script> 
+let a = (function test(){
+    let testJson =[
+
+    	{'city':'부산', 'gender' : 'm', 'age' : 25},
+
+    	{'city':'동해', 'gender' : 'm', 'age' : 35},
+
+    	{'city':'제주', 'gender' : 'm', 'age' : 45},
+
+    	{'city':'독도', 'gender' : 'm', 'age' : 25},
+
+    	{'city':'대전', 'gender' : 'm', 'age' : 35},
+
+    	{'city':'울산', 'gender' : 'f', 'age' : 45},
+
+    	{'city':'독도', 'gender' : 'f', 'age' : 25},
+
+    	{'city':'제주', 'gender' : 'f', 'age' : 35},
+
+    	{'city':'독도', 'gender' : 'f', 'age' : 45},
+
+    	{'city':'제주', 'gender' : 'f', 'age' : 25}
+
+    	];
+    testJson = JSON.stringify(testJson);
+    const newJson = JSON.parse(testJson).filter(function(element){
+          return element.city == "부산";
+    });
+ 
+    return newJson.length;
+})(); 
+
+document.write("city : 부산 cnt:"+a);
+</script>
+</body>
+</html>
